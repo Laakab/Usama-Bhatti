@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+/* Lenis requires the html/body to not have their own native smooth-scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+::selection {
+  background: #c9a24b;
+  color: #0a0a0a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
