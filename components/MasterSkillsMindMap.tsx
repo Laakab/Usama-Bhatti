@@ -339,7 +339,7 @@ export default function MasterSkillsMindMap() {
   const toggleRoot = () =>
     setRootOpen((v) => { if (v) { setOpenBr(new Set()); setOpenCat(new Set()); setOpenGrp(new Set()); setActiveLeaf(null); } return !v; });
 
-  const tog = useCallback((set: Set<string>, setter: (s: Set<string>) => void, id: string, e: React.MouseEvent) => {
+  const tog = useCallback((set: Set<string>, setter: React.Dispatch<React.SetStateAction<Set<string>>>, id: string, e: React.MouseEvent) => {
     e.stopPropagation();
     setter((prev) => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
   }, []);
