@@ -324,7 +324,7 @@ export default function MasterSkillsMindMap() {
   const [activeLeaf, setActiveLeaf] = useState<string | null>(null);
   const [tip,        setTip]        = useState<{ x: number; y: number; text: string } | null>(null);
 
-  const [zoom, setZoom] = useState(0.55);
+  const [zoom, setZoom] = useState(2.5);
   const [pan,  setPan]  = useState<Pt>({ x: 0, y: 0 });
   const dragging     = useRef(false);
   const lastPos      = useRef<Pt>({ x: 0, y: 0 });
@@ -363,7 +363,7 @@ export default function MasterSkillsMindMap() {
   const collapseAll = () => {
     setRootOpen(false); setOpenBr(new Set()); setOpenCat(new Set()); setOpenGrp(new Set()); setActiveLeaf(null);
   };
-  const resetView = () => { setZoom(0.55); setPan({ x: 0, y: 0 }); };
+  const resetView = () => { setZoom(2.5); setPan({ x: 0, y: 0 }); };
   const zoomIn    = () => setZoom((z) => Math.min(z + 0.15, 2.5));
   const zoomOut   = () => setZoom((z) => Math.max(z - 0.15, 0.25));
 

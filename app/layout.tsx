@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Grain from "@/components/Grain";
+import FloatingContact from "@/components/FloatingContact";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-ink text-paper font-body antialiased">
         <Grain />
         <SmoothScroll>{children}</SmoothScroll>
+        <FloatingContact />
       </body>
     </html>
   );
