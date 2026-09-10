@@ -9,6 +9,7 @@ import MagneticButton from "@/components/Buttons";
 import Header from "@/components/Header";
 import MasterSkillsMindMap from "@/components/MasterSkillsMindMap";
 import Testimonials from "@/components/Testimonials";
+import ContactForm from "@/components/ContactForm";
 import { FRAME_COUNT } from "@/lib/frames";
 import {
   Code2,
@@ -280,34 +281,7 @@ export default function Home() {
             </div>
 
             {/* Form */}
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col gap-4"
-              aria-label="Contact form"
-            >
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <FormField id="name"  label="Name"         type="text"  placeholder="Your name" />
-                <FormField id="email" label="Email"        type="email" placeholder="you@email.com" />
-              </div>
-              <FormField id="subject" label="Subject"      type="text"  placeholder="Project type" />
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="message" className="font-body text-xs text-fog">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  placeholder="Tell me about your project…"
-                  className="w-full resize-none rounded-lg border border-line bg-transparent px-4 py-3 font-body text-sm text-paper placeholder:text-fog/50 focus:border-fog focus:outline-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="self-start rounded-full border border-line px-6 py-3 font-body text-sm text-paper transition-colors hover:border-paper hover:bg-line/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-signal"
-              >
-                Send message
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </section>
 
