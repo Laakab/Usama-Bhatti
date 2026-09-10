@@ -8,6 +8,7 @@ import ProjectCard from "@/components/ProjectCard";
 import MagneticButton from "@/components/Buttons";
 import Header from "@/components/Header";
 import MasterSkillsMindMap from "@/components/MasterSkillsMindMap";
+import Testimonials from "@/components/Testimonials";
 import { FRAME_COUNT } from "@/lib/frames";
 import {
   Code2,
@@ -32,6 +33,7 @@ const PROJECTS = [
     year: "2024",
     image: "/Projects Image/1.jfif",
     link: "https://github.com/Laakab/MERN-ECOMMERCE",
+    rating: 5,
   },
   {
     title: "Professional Ecommerce",
@@ -39,6 +41,7 @@ const PROJECTS = [
     year: "2024",
     image: "/Projects Image/2.jfif",
     link: "https://github.com/Laakab/Professional-Ecommerce-Website",
+    rating: 4,
   },
   {
     title: "HTML CSS MSSQL AI ChatBot",
@@ -46,6 +49,7 @@ const PROJECTS = [
     year: "2023",
     image: "/Projects Image/3.jfif",
     link: "https://github.com/Laakab/HTML-CSS-MSSQl-Ai-ChatBot",
+    rating: 4,
   },
   {
     title: "PHP MySQL",
@@ -53,6 +57,7 @@ const PROJECTS = [
     year: "2023",
     image: "/Projects Image/4.jfif",
     link: "https://github.com/Laakab/PHP-MySQL",
+    rating: 3,
   },
   {
     title: "Virtual Try-On",
@@ -60,6 +65,7 @@ const PROJECTS = [
     year: "2024",
     image: "/Projects Image/5.jfif",
     link: "https://github.com/Laakab/Virtual-Try-On",
+    rating: 5,
   },
 ];
 
@@ -190,12 +196,15 @@ export default function Home() {
             <span className="font-body text-sm text-fog">05 projects</span>
           </div>
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-5">
             {PROJECTS.map((p) => (
               <ProjectCard key={p.title} {...p} />
             ))}
           </div>
         </section>
+
+        {/* ── Testimonials ─────────────────────────────── */}
+        <Testimonials />
 
         {/* ── Current Project ──────────────────────────── */}
         <section id="current-project" className="border-t border-line px-8 py-24 md:px-16 md:py-32">

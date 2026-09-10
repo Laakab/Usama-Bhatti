@@ -595,7 +595,7 @@ export default function MasterSkillsMindMap() {
       {/* canvas */}
       <div ref={containerRef}
         className="relative mx-auto w-full cursor-grab overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm active:cursor-grabbing"
-        style={{ maxWidth: W, aspectRatio: `${W}/${H}` }}
+        style={{ height: "600px" }}
         onPointerDown={onPD} onPointerMove={onPM} onPointerUp={onPU} onPointerCancel={onPU}>
 
         <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="h-full w-full"

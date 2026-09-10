@@ -6,9 +6,34 @@ interface Props {
   year: string;
   image: string;
   link: string;
+  rating?: number; // 1–5
 }
 
-export default function ProjectCard({ title, category, year, image, link }: Props) {
+function StarRating({ rating = 0 }: { rating: number }) {
+  return (
+    <div className="flex items-center gap-0.5" aria-label={`Rating: ${rating} out of 5`}>
+      {Array.from({ length: 5 }, (_, i) => (
+        <svg
+          key={i}
+          width="11"
+          height="11"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="transition-colors duration-300"
+          fill={i < rating ? "#c9a24b" : "none"}
+          stroke={i < rating ? "#c9a24b" : "#3a3a38"}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+export default function ProjectCard({ title, category, year, image, link, rating = 0 }: Props) {
   return (
     <a
       href={link}
@@ -48,6 +73,13 @@ export default function ProjectCard({ title, category, year, image, link }: Prop
           />
         </span>
       </div>
+
+      {/* Star rating */}
+      {rating > 0 && (
+        <div className="mt-1.5">
+          <StarRating rating={rating} />
+        </div>
+      )}
     </a>
   );
 }
